@@ -21,6 +21,14 @@ Template.madLib.events({
   'submit #form'(event, instance){
     event.preventDefault();
     let form = event.target;
-    console.info("'" +form.exclamation.value + "!', you say, as you " + form.adverb.value + " jump onto your " + form.noun.value + " and " + form.verb.value +" into the sunset.");
+    let madLibText = "'" +form.exclamation.value + "!', you say, as you " + form.adverb.value + " jump onto your " + form.noun.value + " and " + form.verb.value +" into the sunset.";
+    console.info(madLibText);
+    const header = $('#mad-lib-header');
+    console.log(header);
+    header.hide();
+    header.text(madLibText);
+    header.css("color","#0000ff");
+    header.fadeIn("slow");
+
   }
 });
